@@ -1,11 +1,8 @@
 import Head from 'next/head'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ShowData from '../component/ShowData';
-
 import styles from '../styles/Home.module.css'
-
-
 
 export default function Home() {
   const [name, setname] = useState('')
@@ -14,9 +11,8 @@ export default function Home() {
     setname(event.target.value);
     getData(name)
 } 
-    
     const getData = async(name)=>{
-        const res =  await fetch(`http://universities.hipolabs.com/search?name=${name}`);
+        const res =  await fetch(`https://universities.hipolabs.com/search?name=${name}`);
          const  data1  =await res.json()
         setdata(data1);
        
